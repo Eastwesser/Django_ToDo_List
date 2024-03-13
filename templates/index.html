@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Meet SeRWaL</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
-    <h1>Welcome to SeRWal App</h1>
-    <h2>It is {% now "jS Y H:i" %}</h2>
-    <p class="main-text"><br>SeRWaL is a special methodology of learning languages
-        capturing all aspects of education:
-        <br>
-        <br>-Speaking
-        <br>-Reading
-        <br>-Writing
-        <br>-Listening
-    </p>
-</body>
-</html>
+{% block title %}
+    TODO App Index
+{% endblock title %}
+
+{% block body %}
+<h1>Welcome to our TODOD App!</h1>
+<h2>Work in progress</h2>
+<h3>It is {% now "jS F Y" %}</h3>
+{% endblock body %}
