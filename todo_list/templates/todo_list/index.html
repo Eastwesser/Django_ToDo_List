@@ -6,4 +6,10 @@
 
 {% block body %}
     <h1>ToDo List App</h1>
+    <h2>ToDos:</h2>
+    <ul>
+        {% for todo_item in todo_items %}
+            <li>{{ todo_item }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
