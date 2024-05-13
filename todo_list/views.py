@@ -30,4 +30,4 @@ class ToDoListIndexView(TemplateView):
 
 
 class ToDoListView(ListView):
-    template_name = "todo_list/index.html"
+    model = ToDoItem

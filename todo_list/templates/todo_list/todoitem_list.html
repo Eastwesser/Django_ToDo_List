@@ -1,12 +1,11 @@
 {% extends 'todo_list/base.html' %}
 
 {% block title %}
-    ToDo List App
+    ToDo List
 {% endblock %}
 
 {% block body %}
-    <h1>ToDo List App</h1>
-    <h2>ToDos:</h2>
+    <h3>ToDos:</h3>
     <ul>
         {% for todo_item in object_list %}
             <li>
