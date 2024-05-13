@@ -4,15 +4,15 @@ from django.http import (
 )
 from django.shortcuts import render
 from django.views.generic import (
-    TemplateView,
     ListView,
+    DetailView,
 )
 
 from .models import ToDoItem
 
 
 def index_view(request: HttpRequest) -> HttpResponse:
-    todo_items = ToDoItem.objects.all()
+    todo_items = ToDoItem.objects.all()[:4]
     return render(
         request,
         template_name="todo_list/index.html",
@@ -22,8 +22,16 @@ def index_view(request: HttpRequest) -> HttpResponse:
 
 class ToDoListIndexView(ListView):
     template_name = "todo_list/index.html"
-    model = ToDoItem
+    queryset = ToDoItem.objects.order_by("id").all()[:4]  # можно ставить ограничения
 
 
 class ToDoListView(ListView):
+    model = ToDoItem
+
+
+class ToDoListDoneIndexView(ListView):
+    queryset = ToDoItem.objects.filter(done=True).all()
+
+
+class ToDoDetailView(DetailView):
     model = ToDoItem
