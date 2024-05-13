@@ -1,0 +1,12 @@
+<ul>
+    {% for todo_item in object_list %}
+        <li>
+            {{ todo_item.title }}
+            {% if todo_item.done %}
+                ✅
+            {% else %}
+                ❌
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

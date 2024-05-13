@@ -5,5 +5,6 @@ from . import views
 app_name = "todo_list"
 
 urlpatterns = [
-    path("", views.ToDoListView.as_view(), name="index"),
+    path("", views.ToDoListIndexView.as_view(), name="index"),
+    path("list/", views.ToDoListView.as_view(), name="list"),
 ]

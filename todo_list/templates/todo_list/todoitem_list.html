@@ -6,16 +6,6 @@
 
 {% block body %}
     <h3>ToDos:</h3>
-    <ul>
-        {% for todo_item in object_list %}
-            <li>
-                {{ todo_item.title }}
-                {% if todo_item.done %}
-                    ✅
-                {% else %}
-                    ❌
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    {% include 'todo_list/components/todo_items_list.html' %}
+
 {% endblock %}
